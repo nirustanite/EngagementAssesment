@@ -1,0 +1,7 @@
+
+export const FETCH_QUESTION_COUNT = 'FETCH_QUESTION_COUNT';
+export const QUESTION_COUNT = 'QUESTIONS_COUNT';
+
+
+export const FETCH_QUESTION = 'FETCH_QUESTION';
+export const QUESTION = 'QUESTION';

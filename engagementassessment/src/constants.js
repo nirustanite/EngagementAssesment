@@ -1,0 +1,1 @@
+export const baseUrl = process.env.DATABASE_URL || 'http://localhost:4000';
