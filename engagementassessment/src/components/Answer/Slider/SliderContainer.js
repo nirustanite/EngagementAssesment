@@ -36,12 +36,12 @@ const PrettoSlider = withStyles({
 function valuetext(value) {
     return `${value}`;
 }
-  
+
 export default function SliderContainer(props) {
-    console.log("inside Slider")
+    
 return(
     <React.Fragment>
-        {props.details && <PrettoSlider
+        <PrettoSlider
         defaultValue={props.details.defaultSelected}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
@@ -50,7 +50,7 @@ return(
         marks={props.details.labels}
         min={props.details.start}
         max={props.details.end}
-        />}
+        />
     </React.Fragment>
 
 )}

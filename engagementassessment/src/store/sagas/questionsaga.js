@@ -15,7 +15,6 @@ export function* getQuestionCount(action){
 
 
 export function* getQuestion(action){
-    console.log("action saga", action)
     try{
         const response = yield request.get(`${baseUrl}/questions/${action.id}`);
         yield put(actions.question(response.body));
