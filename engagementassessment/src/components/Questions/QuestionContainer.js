@@ -41,7 +41,9 @@ class QuestionContainer extends Component{
     }
 
     handleCLickbutton = () => {
-      this.props.history.push('/');
+      if(this.state.id === this.props.count){
+        this.props.history.push('/results')
+      }
     }
 
     componentDidMount(){
@@ -62,7 +64,7 @@ class QuestionContainer extends Component{
 
                   <Typography variant="h6" component="h6">{this.state.id}. {this.props.question.description}</Typography>
                   <br />
-                   <AnswerContainer answer={this.props.question.answer} />
+                   <AnswerContainer answer={this.props.question.answers} />
                    <div className="divider"></div>
                   <div className="button-container">
                     {this.state.id !== 1 && 
@@ -86,7 +88,6 @@ class QuestionContainer extends Component{
 }
 
 const mapStateToProps = (state) => {
-   console.log(state)
     return{
         count: state.questionCount,
         question: state.question

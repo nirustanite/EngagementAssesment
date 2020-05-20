@@ -6,77 +6,81 @@
       {
           "id": 1,
           "description": "How satisfied are you with the development opportunities within your company?",
-          "answer":{
-              "type":"Slider",
-              "typeMeta":{
-                  "step": 5,
-                  "start": 0,
-                  "end": 100,
-                  "defaultSelected": 50,
-                  "labels": [
-                    {
-                     "value": 0,
-                     "label":"Not satisfied at all"
-                    },
-                    {
-                     "value": 50,
-                     "label":"Neutral"
-                    }, 
-                    {
-                      "value": 100,
-                      "label":"Extremely Satisfied"
-                    }
-                  ]
-              },
-              "outputParam": null
-          }
+          "answers":[
+            {
+                "type":"Slider",
+                "typeMeta":{
+                    "step": 5,
+                    "start": 0,
+                    "end": 100,
+                    "defaultSelected": 50,
+                    "labels": [
+                      {
+                       "value": 0,
+                       "label":"Not satisfied at all"
+                      },
+                      {
+                       "value": 50,
+                       "label":"Neutral"
+                      }, 
+                      {
+                        "value": 100,
+                        "label":"Extremely Satisfied"
+                      }
+                    ]
+                }
+          }],
+          "outputParam": null   
       },
       {
           "id": 2,
           "description": "What is your overall rating of the recruitment process",
-          "answer":{
+          "answers":[{
               "type":"Rating",
               "typeMeta":{
-                  "label":"Please Rate",
                   "max": 5,
                   "defaultValue": 1,
-                  "options":[
-                    {
-                      "id": 1,
-                      "value":"Effectiveness (rate)"
-                      
-                    },
-                    {
-                      "id": 2,
-                      "value":"Feedback"
-                    },
-                    {
-                      "id": 3,
-                      "value":"Duration"
-                    },
-                    {
-                      "id": 4,
-                      "value":"Relavent Information Shared"
-                    }
-                  ]
+                  "option": "Effectiveness"
+                }
               },
-              "outputParam": []
-          }
+              {
+              "type":"Rating",
+              "typeMeta":{
+                  "max": 5,
+                  "defaultValue": 1,
+                  "option": "Feedback"
+                }
+              },
+              {
+                "type":"Rating",
+                "typeMeta":{
+                  "max": 5,
+                  "defaultValue": 1,
+                  "option": "Duration"
+                }
+              },
+              {
+                "type":"Rating",
+                "typeMeta":{
+                  "max": 5,
+                  "defaultValue": 1,
+                  "option": "Relevant Information Shared"
+                }
+              }
+            ],
+            "outputParam": []
       },
       {
           "id": 3,
-          "description": "How satisfied are you with the development opportunities within your company?",
-          "answer":{
-              "type":"Slider",
+          "description": "Is there something you are not too happy with that we should be aware of at this employer? (also, like always, anonymous)",
+          "answers":[{
+              "type":"TextArea",
               "typeMeta":{
-                  "step": 5,
-                  "start": 0,
-                  "end": 100,
-                  "defaultSelected": 50,
-                  "labels": ["Not satisfied at all", "Neutral", "Extremely Satisfied"]
-              },
-              "outputParam": null
-          }
+                "rows": 5,
+                "col": 50
+              }
+            }],
+            "outputParam": null
       }
   ]
 
