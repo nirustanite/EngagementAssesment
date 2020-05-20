@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "black",
         padding: theme.spacing(8),
         marginTop: 'auto',
+        display: "block"
     },
 }));
 

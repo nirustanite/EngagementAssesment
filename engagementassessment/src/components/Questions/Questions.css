@@ -1,0 +1,21 @@
+.question-container{
+    max-width: 60%;
+    height: 50%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+      
+  }
+
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
