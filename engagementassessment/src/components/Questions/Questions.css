@@ -1,21 +1,33 @@
-.question-container{
-    max-width: 60%;
-    height: 50%;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-      
-  }
-
-
-.button-container{
+.buttoncontainer{
     display: flex;
     justify-content: space-between;
 }
 
-.divider{
-    width:5px;
-    height:auto;
-    display:inline-block;
+.qmenucontainer{
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.segmentcontainer{
+    border: none !important;
+    font-size: 1rem;
+}
+
+p{
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.prevbutton1{
+  display: none !important;
+}
+
+.button{
+    color: #fff !important;
+    background-color: #2000ff !important;
+}
+
+.question{
+    font-weight: 700;
+    font-family: Poppins;
 }

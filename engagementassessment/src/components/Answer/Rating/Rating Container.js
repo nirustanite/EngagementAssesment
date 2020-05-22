@@ -1,12 +1,13 @@
 import React from 'react';
 import Rating from '@material-ui/lab/Rating';
+import './Rating.css';
 
 export default function RatingContainer(props){
     const [valueObj, setValue] = React.useState({id: props.id, value: 2});
     
     return(
         <React.Fragment>
-        <p>{props.details.option}</p>
+        <p className="option">{props.details.option}</p>
          <Rating
           name={`simple-controlled-${props.id}`}
           value={valueObj.value}
@@ -16,6 +17,7 @@ export default function RatingContainer(props){
             }
           }}
         />
+        <br />
         </React.Fragment>
     )
 }

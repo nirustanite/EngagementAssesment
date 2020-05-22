@@ -11,7 +11,7 @@ export default function AnswerContainer(props){
             {props.answer && props.answer.map((answer,i) => {
                return  <div key={i}>
                    {answer.type === "Slider" && <SliderContainer details={answer.typeMeta} />}
-                   {answer.type === "Rating" && <RatingContainer details={answer.typeMeta} id={i} />}
+                   {answer.type === "Rating" && <RatingContainer details={answer.typeMeta} id={i} /> }<br />
                    {answer.type === "TextArea" && <TextAreaContainer details={answer.typeMeta} />}
                 </div>
             })}

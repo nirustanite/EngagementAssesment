@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import {fetchQuestion, fetchQuestionCount} from '../../store/actions';
 import {Link} from 'react-router-dom';
 import './Questions.css';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+
 import AnswerContainer from '../Answer/AnswerContainer';
+
+import {Container, Segment, Button, Header} from 'semantic-ui-react';
 
 class QuestionContainer extends Component{
  
@@ -56,32 +57,35 @@ class QuestionContainer extends Component{
        
         return(
             <React.Fragment>
-               
-               {this.props.question !=={} && <div className="question-container">
-                  <div className="divider"></div>
-                  <Typography variant="h5" component="h5">Question {this.state.id} / {this.props.count}</Typography>
-                  <hr />
-
-                  <Typography variant="h6" component="h6">{this.state.id}. {this.props.question.description}</Typography>
-                  <br />
+               {this.props.question !=={} && <Container className="qmenucontainer">
+                  <Segment className="segmentcontainer">
+                  <p> Question {this.state.id} / {this.props.count} </p>
+                  <Header as="h1" className="question">
+                      <i> "{this.props.question.description}"" </i>
+                  </Header>
+                   
+                    
+                    <br />
                    <AnswerContainer answer={this.props.question.answers} />
-                   <div className="divider"></div>
-                  <div className="button-container">
-                    {this.state.id !== 1 && 
-                       <Link to={`/questions/${this.state.id - 1}`}>
-                       <Button variant="contained" color="primary" onClick={this.handlePrevClick}>Prev</Button></Link>
+                  </Segment>
+                  <br />
+                  <div className="buttoncontainer">
+                    {this.state.id === 1 ? <Link to={`/questions/${this.state.id - 1}`}>
+                      <Button disabled onClick={this.handlePrevClick} className="prevbutton1">Prev</Button>
+                    </Link>: <Link to={`/questions/${this.state.id - 1}`}>
+                      <Button onClick={this.handlePrevClick} className="button">Prev</Button>
+                    </Link>
                     }
+                    
 
-                    {this.state.id === this.props.count && <Button  variant="contained"  color="primary" onClick={this.handleCLickbutton}>Submit</Button>}
+                    {this.state.id === this.props.count && <Button className="button" onClick={this.handleCLickbutton}>Submit</Button>}
 
                     {this.state.id < this.props.count && <Link to={`/questions/${this.state.id + 1}`}>
-                      <Button variant="contained" color="primary" onClick={this.handleNextClick}>Next</Button>
+                      <Button className="button" onClick={this.handleNextClick}>Next</Button>
                     </Link>}
-                  
-                  </div>
-                
-                </div>
-             }
+                    </div>
+               </Container>}
+               
             </React.Fragment>
         )
     }
@@ -96,3 +100,33 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps,{fetchQuestionCount,fetchQuestion})(QuestionContainer)
+
+
+
+// {this.props.question !=={} && <div className="question-container">
+//                   <div className="divider"></div>
+//                   <Typography variant="h5" component="h5">Question {this.state.id} / {this.props.count}</Typography>
+//                   <hr />
+
+//                   <Typography variant="h6" component="h6">{this.state.id}. {this.props.question.description}</Typography>
+//                   <br />
+//                    <AnswerContainer answer={this.props.question.answers} />
+//                    <div className="divider"></div>
+//                   <div className="button-container">
+                    
+//                    {this.state.id === 1 ?<Link to={`/questions/${this.state.id - 1}`}>
+//                     <Button variant="contained" color="primary" onClick={this.handlePrevClick}>Prev</Button>
+//                   </Link>: null
+//                  }
+                    
+
+//                     {this.state.id === this.props.count && <Button  variant="contained"  color="primary" onClick={this.handleCLickbutton}>Submit</Button>}
+
+//                     {this.state.id < this.props.count && <Link to={`/questions/${this.state.id + 1}`}>
+//                       <Button variant="contained" color="primary" onClick={this.handleNextClick}>Next</Button>
+//                     </Link>}
+                  
+//                   </div>
+                
+//                 </div>
+//              }

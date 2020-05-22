@@ -3,14 +3,17 @@ import Slider from '@material-ui/core/Slider';
 import { withStyles } from '@material-ui/core/styles';
 
 
+
 const PrettoSlider = withStyles({
     root: {
       color: '#0d47a1',
       height: 8,
+      width: 500,
+      marginLeft: 30,
     },
     thumb: {
       height: 24,
-      width: 24,
+      width:24,
       backgroundColor: '#fff',
       border: '2px solid currentColor',
       marginTop: -8,
@@ -21,7 +24,8 @@ const PrettoSlider = withStyles({
     },
     active: {},
     valueLabel: {
-      left: 'calc(-50% + 4px)',
+      left: 0,
+      marginLeft: 100
     },
     track: {
       height: 8,
@@ -29,7 +33,7 @@ const PrettoSlider = withStyles({
     },
     rail: {
       height: 8,
-      borderRadius: 4,
+      borderRadius: 2,
     },
   })(Slider);
 
@@ -54,3 +58,11 @@ return(
     </React.Fragment>
 
 )}
+
+
+
+
+
+
+
+          

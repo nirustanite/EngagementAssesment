@@ -7,7 +7,6 @@ export default class App extends Component{
     render(){
         return(
             <React.Fragment>
-                 <div className="container">
                     <Header />
                     <Switch>
                         <Route exact path="/" component={HomePage} />
@@ -15,8 +14,6 @@ export default class App extends Component{
                         <Route exact path="/results" component={ResultContainer} />
                         <Route component={Component404} />
                     </Switch>
-                   
-                </div>
             </React.Fragment>
         )
     }

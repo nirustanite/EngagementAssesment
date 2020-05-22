@@ -1,9 +1,15 @@
-.container{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-.body-container{
+.homecontainer{
+    justify-content: center;
     text-align: center;
+}
+
+p{
+  font-weight: 400;
+  font-size: 25px;
+  font-family: 'Poppins';
+}
+
+.homebutton{
+  background-color: #1d00e6 !important;
+  color: #fff !important;
 }
